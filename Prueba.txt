@@ -1,0 +1,87 @@
+mport pandas as pd
+
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+print(df.head())
+
+import pandas as pd
+
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+
+print("Forma del marco de datos:")
+print(df.shape)  
+print("\nPrimeras filas del DataFrame:")
+print(df.head()) 
+print("\nÚltimas filas del DataFrame:")
+print(df.tail())  
+print("\nTipos de datos de cada columna:")
+print(df.dtypes)  
+print("\nTipo de marco de datos:")
+print(type(df))
+
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+description = df.describe()
+print(description)
+
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+min_rides = df['rides'].min()
+max_rides = df['rides'].max()
+print("Minimum number of rides:", min_rides)
+print("Maximum number of rides:", max_rides)
+
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+df['date'] = pd.to_datetime(df['date'])
+df.set_index('date', inplace=True)
+print(df.head())
+
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+df['date'] = pd.to_datetime(df['date'])
+df.sort_values(by='date', inplace=True)
+print(df.head())
+
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+Garfield_Dan_Ryan = df[df['stationname'] == 'Garfield-Dan Ryan']
+print(Garfield_Dan_Ryan.head())
+
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+Garfield_South_Elevated = df[df['stationname'] == 'Garfield-South Elevated']
+print(Garfield_South_Elevated.head())
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+Garfield_Dan_Ryan = df[df['stationname'] == 'Garfield-Dan Ryan']
+sns.set(rc={'figure.figsize':(11, 4)})
+plt.plot(Garfield_Dan_Ryan['rides'], linewidth=0.5)
+plt.title('Rides at Garfield-Dan Ryan Station')
+plt.xlabel('Date')
+plt.ylabel('Number of Rides')
+plt.show()
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Sinchiguano/chicagoUniversity/main/cta_Ridership.csv'
+df = pd.read_csv(url)
+Garfield_South_Elevated = df[df['stationname'] == 'Garfield-South Elevated']
+sns.set(rc={'figure.figsize':(11, 4)})
+plt.plot(Garfield_South_Elevated['rides'], linewidth=0.5)
+plt.title('Rides at Garfield-South Elevated Station')
+plt.xlabel('Date')
+plt.ylabel('Number of Rides')
+plt.show()
